@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="testUtillities/" kind="src" path="ROVER_11/src"/>
+	<classpathentry kind="src" path="ROVER_11/src/testUtillities"/>
+	<classpathentry kind="lib" path="ROVER_11/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="ROVER_11/libs/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="ROVER_11/libs/guava-jdk8-1.1.jar"/>
+	<classpathentry kind="lib" path="ROVER_11/libs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prashant/workspace_537/Rover_11/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prashant/workspace_537/Rover_11/libs/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prashant/workspace_537/Rover_11/libs/guava-jdk8-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Prashant/workspace_537/Rover_11/libs/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
