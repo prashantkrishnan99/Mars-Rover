@@ -16,7 +16,7 @@ import enums.RoverDriveType;
 import enums.Terrain;
 
 /**
- * Created by samskim on 5/12/16.
+ * Created by prashantIyer on 5/12/16.
  */
 public class SearchLogic {
     // ******* Search Methods
