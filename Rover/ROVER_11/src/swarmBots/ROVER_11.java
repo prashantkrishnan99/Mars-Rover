@@ -30,7 +30,7 @@ import rover_logic.SearchLogic;
 import supportTools.CommunicationHelper;
 
 /**
- * Created by samskim on 4/21/16.
+ * Created by prashantIyer on 4/21/16.
  */
 public class ROVER_11 {
 
@@ -99,8 +99,7 @@ public class ROVER_11 {
         String line = "";
 
         boolean goingSouth = false;
-        boolean stuck = false; // just means it did not change locations between requests,
-        // could be velocity limit or obstruction etc.
+        boolean stuck = false; // just means it did not change locations between requests, could be velocity limit or obstruction etc.
         boolean blocked = false;
 
         String[] cardinals = new String[4];
@@ -149,7 +148,7 @@ public class ROVER_11 {
         SearchLogic search = new SearchLogic();
 
         // ******** define Communication
-//        String url = "http://192.168.1.104:3000/api";
+        /**String url = "http://192.168.1.104:3000/api";**/
         String url = "http://localhost:3000/api";
         String corp_secret = "gz5YhL70a2";
 
@@ -165,8 +164,7 @@ public class ROVER_11 {
         // Get destinations from Sensor group. I am a driller!
         List<Coord> blockedDestinations = new ArrayList<>();
 
-
-//        destinations.add(targetLocation);
+		
         //TODO: implement sweep target location
 
         Coord destination = null;
@@ -536,6 +534,65 @@ public class ROVER_11 {
         return null;
     }
 
+	    public void sweep(Coord target_loc, MapTile[][] scanMapTiles) {
++        /** Gather all the science in the target location
++    	for every element in the matrix **/
++    	boolean flag = true;
++    	int index = 0,x = 0,y = 0,z = 0;
++    	MapTile[] result;
++    	while(flag) {
++    		if(scanMapTiles==null || scanMapTiles.length==0) {
++    			System.out.println("Oops!!! Nothing to gather!!!");
++    		}
++    		/** getting x,y cord **/
++    		x = scanMapTiles.length-1;
++    		y = scanMapTiles[0].length-1; 
++    		result = new MapTile[(x+1)*(y+1)];
++    		/** logic for traversing the destination matrix in a random order **/
++    		for(int i=0;i<=x+y;i++) {
++                if(i%2==0) {
++                   for(z=i;z>=0;z--) {
++                	   //update  valid index
++                	   if ((z<=x)&&(i-z<=y)) {
++                           index++;
++                       }
++                   }
++    		}
++            else if ((z<=x)&&(i-z<=y)) {
++                    result[index] = scanMapTiles[x][i - x];
++                    System.out.println(result[index]);
++                    index++;       
++            }
++    		/*for(x=0;x<scanMapTiles.length;x++) 	{ 
++    			for(y=0;y<scanMapTiles[x].length;y++) {
++    				MapTile m = scanMapTiles[x][y];
++    			}
++    		}*/
++            //System.out.println("GATHER");
++    		//add to the arraylist
++    		}
++    	}
++    }
++    
++    /** checks whether there is another rover in that location 
++     *  returns true if there is else false**/
++    private static boolean isOccupied(Coord currentLoc) {
++    	String status = "";
++    	int x = currentLoc.xpos;
++		int y = currentLoc.ypos;
++    	for(int i=0; i<occupied.size(); i++)
++			if(x==occupied.get(i)[0] && y==occupied.get(i)[1]) {
++				isOccupied  = true;
++				if (!isOccupied) {
++		            status = "Obstacle Ahead !!!";
++		            System.out.println(status + "at position"+"("+x+","+y+")");
++				return true;
++			}
++		}
++		return false; 
++    }
+	
+	
     /**
      * Runs the client
      */
