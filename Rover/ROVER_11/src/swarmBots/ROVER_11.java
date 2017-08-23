@@ -45,7 +45,7 @@ public class ROVER_11 {
     List<Coord> destinations;
     long trafficCounter;
     static final long walkerDelay = TimeUnit.MILLISECONDS.toMillis(1230);
-
+	
     public ROVER_11() {
         // constructor
         rovername = "ROVER_11";
@@ -141,7 +141,7 @@ public class ROVER_11 {
         }
         System.out.println(rovername + " TARGET_LOC " + targetLocation);
 
-
+         
         // ******* destination *******
         // TODO: Sort destination depending on current Location
 
