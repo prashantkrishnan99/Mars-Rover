@@ -13,6 +13,8 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 
+import com.sun.prism.image.Coords;
+
 import enums.RoverDriveType;
 import enums.Terrain;
 
@@ -133,6 +135,62 @@ public class SearchLogic {
         return moves;
     }
 
+    
+    
+    /** once the rover reaches the destination **/
+        public void sweep(Coord target_loc, MapTile[][] scanMapTiles) {
+            /** Gather all the science in the target location
+        	for every element in the matrix **/
+        	boolean flag = true;
+        	int index = 0,x = 0,y = 0,z = 0;
+        	MapTile[] result;
+        	while(flag) {
+        		if(scanMapTiles==null || scanMapTiles.length==0) {
+        			System.out.println("Oops!!! Nothing to gather!!!");
+        		}
+        		/** getting x,y cord **/
+        		x = scanMapTiles.length-1;
+        		y = scanMapTiles[0].length-1; 
+        		result = new MapTile[(x+1)*(y+1)];
+        		/** logic for traversing the destination matrix in a random order **/
+        		for(int i=0;i<=x+y;i++) {
+                    if(i%2==0) {
+                       for(z=i;z>=0;z--) {
+                    	   //update  valid index
+                    	   if ((z<=x)&&(i-z<=y)) {
+                               index++;
+                           }
+                       }
+        		}
+                else if ((z<=x)&&(i-z<=y)) {
+                        result[index] = scanMapTiles[x][i - x];
+                        System.out.println(result[index]);
+                        index++;       
+                }
+        		}
+        	}
+        }
+        
+        /** by prashant **/
+        /** checks whether there is another rover in that location 
+         *  returns true if there is else false**/
+        private static boolean isOccupied(Coord currentLoc) {
+        	String status = "";
+        	int x = currentLoc.xpos;
+    		int y = currentLoc.ypos;
+        	for(int i=0; i<occupied.size(); i++)
+    			if(x==occupied.get(i)[0] && y==occupied.get(i)[1]) {
+    				isOccupied  = true;
+    				if (!isOccupied) {
+    		            status = "Obstacle Ahead !!!";
+    		            System.out.println(status + "at position"+"("+x+","+y+")");
+    				return true;
+    			}
+    		}
+    		return false; 
+        }     
+        
+        
     // to check neighbors for heuristics
     public List<Coord> getAdjacentCoordinates(Coord coord, MapTile[][] scanMapTiles, Coord current) {
         List<Coord> list = new ArrayList<>();
