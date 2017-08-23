@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-# CS537-System-Engineering-
+Mars Rover :
 
-This is rover game. There are two teams blue crop and Red corp. Each team has many rovers with specific functionalities and competes with each other to win the game.The stargery to win the game is to collect difficult types of minerals(diamond,cystal,emerald). 
-
-Each equipment(driller,picker) and sensor(radio active sensor , chemaical senser) is used to detect and collect an particular minaral. The arena is a tile based area with many diffrent terrains (Sand , Rock ,Graval)
-
-Our team worked on a scanning rover to supported the blue corp to win the game. Basically my team rover will use different type of path finding algorithms(combination of A* star, Random , Supervsied algorithms) to discover the details in each tile (about terrain and minerals) and push those details to the server so that other rovers in the blue corp can navigate based on the information from the server
-=======
-MARS ROVER
-    - A simulation of Rovers in Mars
-    - Algorithm for obstacle avoidance and heuristic path finding
->>>>>>> bcdc26cc197779cc765eb96f90d8e9e229433b7c
->>>>>>> f3b0c4796b9e52cadbcda2a1297805ee55161c27
+•   Simulation of a swarm of autonomous rovers designed to explore the surface of another planet in our solar system using A* search with optimal heuristics using JAVA.
+•	A communication system for the rovers to send and receive information asynchronously using Node JS.
