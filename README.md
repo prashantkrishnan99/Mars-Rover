@@ -1,4 +1,4 @@
-Mars Rover :
+**Mars Rover :**
 
 •   Simulation of a swarm of autonomous rovers designed to explore the surface of another planet in our solar system using A* search with optimal heuristics using JAVA.
 
