@@ -2,7 +2,7 @@
 REST API server used as means to exchange information for [Swarm Robot Project][1]
 
 
-####Instructions:
+**Instructions:**
 1. clone this git repository
 2. install nodejs
 3. run `npm install`
