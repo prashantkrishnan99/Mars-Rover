@@ -1,0 +1,26 @@
+{
+  "name": "Communication",
+  "description": "Communication Server for Green Corp",
+  "main": "app.js",
+  "authors": [
+    "Prashant",
+    "PBR",
+    "S Kim"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Group",
+    "11"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
